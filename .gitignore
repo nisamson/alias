@@ -1,0 +1,5 @@
+/target
+*.sqlite3
+/src/schema.rs
+.env
+.idea/

@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Alias Server Service serving aliases serverly
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/aliasd -c /etc/aliasd/aliasd.conf run
+ExecStop=/bin/kill -2 ${MAINPID}
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
